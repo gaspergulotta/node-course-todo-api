@@ -217,7 +217,7 @@ describe('POST /users/me', () => {
                 User.findOne({email}).then((user) => {
                     expect(user).toBeTruthy();
                     done();
-                });
+                }).catch((e) => done(e));
             });
     });
 
@@ -241,3 +241,4 @@ describe('POST /users/me', () => {
             .end(done);
     });
 });
+
